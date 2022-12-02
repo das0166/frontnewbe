@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import ColorContext from './Color';
 import Moment from 'moment'
 import '../font.css';
 
 const Post = () => {
     const {state} = useContext(ColorContext);
-    const postcolor = JSON.parse(localStorage.getItem("postColor"))
 
     const event = JSON.parse(localStorage.getItem("event"))
 
@@ -31,12 +30,7 @@ const Post = () => {
         <div className='right' style={{background: state.postcolor}}>
             <div className='sticker' style={{background : state.stickercolor}}>{formatDate}</div>
             <div className="right_box">
-                {/* {loadEvent ? loadEvent.map((it, idx)=>(
-                  <div key={idx}>
-                    {formatDate === it.date ? <div className="sche" style={{display: "flex", margin: "0 auto 10px"}} >{it.title}</div> : <div className="none" style={{display: "none"}} >{it.title}</div>}
-                  </div>
-                )) : */}
-                {event.map((it,idx)=>( 
+                {event && event.map((it,idx)=>( 
                   <div key={idx}>
                     {formatDate === it.date ? <div className="sche" style={{display: "flex", margin: "0 auto 10px"}} >{it.title}</div> : <div className="none" style={{display: "none"}} >{it.title}</div>}
                   </div>

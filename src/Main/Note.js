@@ -1,5 +1,5 @@
 import React, { useContext,useState,useRef, useEffect } from 'react'
-import ColorContext, {ColorConsumer} from './Color';
+import ColorContext from './Color';
 import NoteEditor from './NoteEditor';
 import NoteList from './NoteList';
 import '../font.css';
@@ -31,7 +31,7 @@ const Note = () => {
 
     const onEdit = (targetId, newTodo) => {
       setData(
-        data.map((it) => 
+        data && data.map((it) => 
         it.id === targetId ? { ...it, todo:newTodo } : it)
       );
     };
