@@ -22,7 +22,7 @@ function Todo(){
     const [themeMode, setThemeMode] = useState(themeData)
     const theme = themeMode === 'light' ? light : dark;
 
-    const toggleTheme = () => setThemeMode(themeMode === 'light' ? 'dark' : 'light')
+    const toggleTheme = () => setThemeMode(themeMode === 'light' ? 'light' : 'dark')
 
     useEffect(()=>{
       window.localStorage.setItem("dark",themeMode)
